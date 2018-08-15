@@ -1,4 +1,6 @@
 class V1::ContactsController < ApplicationController
+    before_action :check_jwt_token
+
   def index
     @contacts = Contact.all
 
