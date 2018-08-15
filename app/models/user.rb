@@ -12,7 +12,7 @@ class User < ApplicationRecord
   def set_jwt_token
     expiration = (Time.now + 2.weeks).to_i
     jwt = JWT.encode(
-      { authorization_token: self.authentication_token, exp: expiration },
+      { time: Time.now.to_s, authentication_token: self.authentication_token, exp: expiration },
       SECRET_KEY_FOR_JWT,
       'HS256'
     )
