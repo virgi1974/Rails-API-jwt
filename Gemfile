@@ -56,3 +56,5 @@ gem 'simple_token_authentication', '~> 1.0'
 group :development, :test do
   gem 'pry'
 end
+
+gem 'jwt'
